@@ -1,0 +1,80 @@
+{% extends 'Sign/home.html' %}
+{ % load static % }
+{% block content %}
+
+
+<legend style=" margin-top : 150px; margin-left : 400px;"> Without Smartphone Workers</legend>
+
+
+<div class="container" >
+  <table class="table table-bordered" style=" margin-top : 50px ;margin-left : 100px; width : 800px; ">
+    <thead>
+      <tr style=" background-color : #5c6bc0 ; ">
+            <th>Sr no.</th>
+            <th> Name</th>
+            <th>Contact Number</th>
+            <th>Gender</th>
+            <th>Address </th>
+            <th>Permanant Address</th>
+            <th>Aadhar Numbar</th>
+            <th>Work</th>
+            <th>Experience</th>
+            <th>Req Cancel Count</th>
+            <th>Blocked</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+            <td>1</td>
+            <td>Aadesh</td>
+            <td>8999789564</td>
+            <td>Male</td>
+            <td>Pimpari</td>
+            <td>Pune</td>
+            <td>1234569845111</td>
+            <td>Carpenter</td>
+            <td> 5 </td>
+            <td>3</td>
+            <td> No </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Aditya</td>
+        <td>9078789564</td>
+        <td>Male</td>
+        <td>Pimpari</td>
+        <td>Pimpari</td>
+        <td>1234569845111</td>
+        <td>Plumber</td>
+        <td> 5 </td>
+        <td>20</td>
+        <td> Yes </td>
+
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Mali</td>
+        <td>9078789564</td>
+        <td>Male</td>
+        <td>Pimpari</td>
+        <td>Pimpari</td>
+        <td>1234569845111</td>
+        <td>Plumber</td>
+        <td> 5 </td>
+        <td>12</td>
+        <td> No </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+  <a style= " margin-top : 50px; margin-left : 100px;" id = "btn1" class="btn btn-info" role="button" href= " {% url 'create' %} " >  Back </a>
+
+
+</div>
+
+
+{% endblock %}

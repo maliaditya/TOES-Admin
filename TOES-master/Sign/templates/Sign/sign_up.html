@@ -1,0 +1,100 @@
+{% load static%}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>SD_clicks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+</style>
+<body style="background: url({% static 'media/untitled.png'%}) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;">
+
+<br>
+<br>
+
+
+<div class="card" style="
+                        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                        transition: 0.3s;
+                        margin-top: 5%;
+                        border-radius: 35px;
+                        width:60%;
+                        margin-left: 20%;
+                        ">
+
+  <br>
+
+<main role="main" class="container" style="margin-left: auto;margin-right: auto;width:auto;margin-top: -24px;">
+
+  
+<div class="card-columns">
+    
+    <div class="card" style="width: 24rem;border-color: white;border-radius: 36px;margin-bottom: 0px;">
+  <div class="card-body">
+      <center><p class="card-title" style="padding-top: 15px;color: #3d0546;font-size: 26px;">Sign Up</p>
+        <hr width="300px;" color="#3d0546"
+        size="200"> </center>
+
+         <input style="width: 100%;margin-top: -17px;" type="password" class="form-control" id="pwd" placeholder="Name" name="pswd">
+<br> <br> <input style="width: 100%;margin-top: -17px;" type="password" class="form-control" id="pwd" placeholder="Username" name="pswd">
+<br><br> <input style="width: 100%;margin-top: -17px;" type="password" class="form-control" id="pwd" placeholder="Email id" name="pswd">
+<br><br>  <input style="width: 100%;margin-top: -17px;" type="password" class="form-control" id="pwd" placeholder="Password" name="pswd">
+<br> <br> <input style="width: 100%;margin-top: -17px;" type="password" class="form-control" id="pwd" placeholder="Confirm Password" name="pswd">
+
+<br>
+    <center><a  href="{% url 'sign_in' %}"><button type="submit" style="width: 23%;color: white;background-color: #270038;border-radius: 35px;">Let's Go</button></a>
+
+
+
+      
+  </div>
+</div>
+    
+    <div class="card" style="width: 25rem;margin-left: 34px;margin-top: 0px;border-radius: 35px;margin-bottom: 0px;background-color: #3d0546;">
+        <center><p class="card-title" style="padding-top: 15px;color: white;font-size: 26px;">Let's get you set up</p>
+         </center>
+
+  <div class="card-body" style="padding-top:83px">
+      <center><p class="card-title" style="padding-top: 90px;color: #ffffff73;;font-size: 15px;">It Will Take Couple Of Minutes<br>To Create Your Accont</p>
+         </center>
+    <center><a  href="{% url 'sign_in' %}"><button type="submit" style="width: 23%;color: white;background-color: #270038;border-radius: 35px;">Log In</button></a>
+    
+    <br>
+<div class="container" style="
+    padding-top: 140px;
+">
+    <p style="color:black;margin-bottom: 0px;">from</p>
+    <p style="color:white;margin-bottom: -1px;">PILLARS</p></div>
+  </div>
+  </center>
+</div>
+    
+</div>
+</div>
+
+</div>
+
+
+
+</body>
+</html>

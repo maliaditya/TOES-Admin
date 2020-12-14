@@ -1,0 +1,49 @@
+{% extends 'Sign/home.html' %}
+{ % load static % }
+{% block content %}
+
+
+<legend style=" margin-top : 150px; margin-left : 500px;"> Phone Numbers</legend>
+
+
+<div class="container-fluid" >
+  <table class="table table-bordered" style=" margin-top : 50px ;margin-left : 200px; width : 800px; ">
+    <thead>
+      <tr style=" background-color : #5c6bc0 ; ">
+        <th>Sr no.</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>8999252564</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>9011252564</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>8099252564</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>8909852564</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>8923352564</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+  <a id = "btn1" style="  margin-left : 1000px;" class="btn btn-info" role="button" href=" {% url 'create' %} "> Create </a>
+
+
+</div>
+
+
+{% endblock %}
