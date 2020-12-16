@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hidden_admin_url/' , include('Sign.urls')),
+    path('' , include('Sign.urls')),
 ]
 
 

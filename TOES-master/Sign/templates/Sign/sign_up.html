@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>SD_clicks</title>
+    <title>PILLARS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -23,7 +23,7 @@ hr {
 }
 
 </style>
-<body style="background: url({% static 'media/untitled.png'%}) no-repeat center center fixed;
+<body style="background: url({% static 'media/bg.png'%}) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -51,33 +51,36 @@ hr {
     
     <div class="card" style="width: 24rem;border-color: white;border-radius: 36px;margin-bottom: 0px;">
   <div class="card-body">
-      <center><p class="card-title" style="padding-top: 15px;color: #3d0546;font-size: 26px;">Sign Up</p>
+      <center><p class="card-title" style="padding-top: 15px;color: #3d0546;font-size: 26px;">Create New Admin</p>
         <hr width="300px;" color="#3d0546"
         size="200"> </center>
 
-         <input style="width: 100%;margin-top: -17px;" type="password" class="form-control" id="pwd" placeholder="Name" name="pswd">
-<br> <br> <input style="width: 100%;margin-top: -17px;" type="password" class="form-control" id="pwd" placeholder="Username" name="pswd">
-<br><br> <input style="width: 100%;margin-top: -17px;" type="password" class="form-control" id="pwd" placeholder="Email id" name="pswd">
-<br><br>  <input style="width: 100%;margin-top: -17px;" type="password" class="form-control" id="pwd" placeholder="Password" name="pswd">
-<br> <br> <input style="width: 100%;margin-top: -17px;" type="password" class="form-control" id="pwd" placeholder="Confirm Password" name="pswd">
+
+    <form method="post">
+    {% csrf_token %}
+         <input style="width: 100%;margin-top: -17px;" type="Name" class="form-control" id="pwd" placeholder="Name" name="name">
+<br> <br> <input style="width: 100%;margin-top: -17px;" type="Username" class="form-control" id="pwd" placeholder="Username" name="username">
+<br><br> <input style="width: 100%;margin-top: -17px;" type="Email" class="form-control" id="pwd" placeholder="Email id" name="email">
+<br><br>  <input style="width: 100%;margin-top: -17px;" type="password" class="form-control" id="pwd" placeholder="Password" name="password">
+<br> <br> <input style="width: 100%;margin-top: -17px;" type="password" class="form-control" id="pwd" placeholder="Confirm Password" name="re_password">
 
 <br>
-    <center><a  href="{% url 'sign_in' %}"><button type="submit" style="width: 23%;color: white;background-color: #270038;border-radius: 35px;">Let's Go</button></a>
+    <center><button type="submit" style="width: 23%;color: white;background-color: #2B1EC0;border-radius: 35px;">Create</button>
 
-
+</form>
 
       
   </div>
 </div>
     
-    <div class="card" style="width: 25rem;margin-left: 34px;margin-top: 0px;border-radius: 35px;margin-bottom: 0px;background-color: #3d0546;">
-        <center><p class="card-title" style="padding-top: 15px;color: white;font-size: 26px;">Let's get you set up</p>
+    <div class="card" style="width: 25rem;margin-left: 34px;margin-top: 0px;border-radius: 35px;margin-bottom: 0px;background-color: #2B1EC0;">
+        <center><p class="card-title" style="padding-top: 15px;color: white;font-size: 26px;">Admin Sign Up</p>
          </center>
 
   <div class="card-body" style="padding-top:83px">
       <center><p class="card-title" style="padding-top: 90px;color: #ffffff73;;font-size: 15px;">It Will Take Couple Of Minutes<br>To Create Your Accont</p>
          </center>
-    <center><a  href="{% url 'sign_in' %}"><button type="submit" style="width: 23%;color: white;background-color: #270038;border-radius: 35px;">Log In</button></a>
+    <center><button type="submit" style="width: 23%;color: white;background-color: #2B1EC0;border-radius: 35px;">Log In</button>
     
     <br>
 <div class="container" style="

@@ -29,7 +29,7 @@ body {
   z-index: 1;
   top: 58px;
   left: 0;
-  background-color: #6f008a;
+  background-color: #2B1EC0;
   overflow-x: hidden;
   padding-top: 20px;
 }
@@ -75,7 +75,7 @@ body {
 
 
 .bg-light {
-    background-color: #7a0099!important;
+    background-color: #2B1EC0!important;
 }
 
 #bottom { 
@@ -151,6 +151,7 @@ tr:nth-child(even) {
   <a href="{% url 'recruiters' %}">Recruiter</a>
   <a href="{% url 'workers'%}">Worker</a>
   <a href=" {% url 'register' %} " >Registeration</a>
+  <a href="{% url 'sign_up' %}">Create Admin </a>
 
   <div id="bottom" style="color:#989898">
         <div >Date : <div style="display:inline;" id="date"></div></div>
@@ -170,7 +171,7 @@ tr:nth-child(even) {
       <ul class="dropdown-menu">
           <li><a href="#">Profile</a></li>
           <li><a href="#">Settings</a></li>
-          <li><a  href="{% url 'sign_in' %}">Sign out</a></li>
+          <li><form  method = 'post' > {% csrf_token %}<button type="submit">Sign out</button></form></li>
 
         </ul>
       </div>

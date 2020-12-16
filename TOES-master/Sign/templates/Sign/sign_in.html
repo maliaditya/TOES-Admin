@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>SD_clicks</title>
+    <title>PILLARS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -16,7 +16,7 @@
 
 
 </style>
-<body style="background: url({% static 'media/untitled.png'%}) no-repeat center center fixed;
+<body style="background: url({% static 'media/bg.png'%}) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -54,32 +54,37 @@
     border-color: #f34242;
 ">
 
-       <a href="{% url 'sign_up' %}"> <br>Want to create account?</a>
+<br> <h6>TOES</h6>
+  
       
   </div>
 </div>
     
-    <div class="card" style="width: 25rem;margin-left: 34px;margin-top: 0px;border-radius: 35px;margin-bottom: 0px;background-color: #3d0546;">
-        <p class="card-title" style="padding-top: 15px;color: white;font-size: 26px;">LOG IN</p>
+    <div class="card" style="width: 25rem;margin-left: 34px;margin-top: 0px;border-radius: 35px;margin-bottom: 0px;background-color: #2B1EC0;">
+        <p class="card-title" style="padding-top: 15px;color: white;font-size: 26px;">Admin Log In</p>
         <hr width="300px;" color="white"
         size="200"> 
 
         <center><p style="color: #ffffff73;">Manage Your Admin Page<br> With Ease</center> 
   <div class="card-body">
-    
-    <label for="uname"><p style="color: white;">Username</p></label>
-    <br>
-    <input style="width: 76%;margin-top: -17px;" type="password" class="form-control" id="pwd" placeholder="Username" name="pswd">
+
+    <form method="post">
+    {% csrf_token %}
+        <label for="uname"><p style="color: white;">Username</p></label><br>
+          <input style="width: 76%;margin-top: -17px;" type="username" class="form-control" id="pwd" placeholder="Username" name="username">
 <br>
     <label for="psw"><p style="color: white;">Password</p></label>
     <br>
-    <input style="width: 76%;margin-top: -17px;"  type="password" class="form-control" id="pwd" placeholder="Password" name="pswd">
+    <input style="width: 76%;margin-top: -17px;"  type="password" class="form-control" id="pwd" placeholder="Password" name="password">
         <br>
-    <button type="submit" style="width: 37%;background-color: #fff;border-radius: 35px;"><a href="{% url 'Home' %} ">Login</a></button>
+<button type="submit" style="width: 37%;background-color: #2B1EC0;border-radius: 35px;color:white">Login</button>
     <label>
       <div><input type="checkbox"   checked="checked" name="remember"> <div style="color: #c1baba;display:inline;">Remember me</div></div>
     
     </label>
+
+</form>
+   
     <a href="{% url "forget_pass" %}"  ><u style="color:white"><p>Forgot Password?</p></u></a>
     <br>
 <div class="container">

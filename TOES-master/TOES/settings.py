@@ -125,3 +125,4 @@ MEDIA_ROOT=os.path.join(BASE_DIR, 'media')#location where actually profile pictu
 
 
 CRISPY_TEMPLATE_PACK= 'bootstrap4'
+LOGIN_REDIRECT_URL = 'Home'
