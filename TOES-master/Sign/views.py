@@ -13,22 +13,26 @@ def sign_in(request):
     if request.method == 'POST':
 
         #Retriving username & password form login form template
-        username = request.POST.get('username')
+        phone = request.POST.get('phone')
         password = request.POST.get('password')
         
         data = {
-            'email': username,
             'password':  password,
+            'phone': phone,
         }
+
+        try:
         # post login details to this api
-        url = 'http://52.201.220.252/authapp/token/login/'
-        result = requests.post(url, json=data)
-        
+            url = 'http://52.201.220.252/token/login/'
+            result = requests.post(url, json=data)
+        except requests.RequestException:
+            print('wrong login fields')
         #accessing token and putting it into djoser Authorization format
+        global AUTH_TOKEN 
         AUTH_TOKEN = 'Token {}'.format(result.json()['auth_token'])
         print(AUTH_TOKEN)
         #This Api provides User Information name , is_admin, is_superuser, email, phone etc
-        user_info_api = 'http://52.201.220.252/authapp/users/me/'
+        user_info_api = 'http://52.201.220.252/users/me/'
 
         #requsting user info form api
         user_info = requests.get(user_info_api, headers={'Authorization': AUTH_TOKEN})
@@ -49,22 +53,29 @@ def sign_up(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         username = request.POST.get('username')
-        email = request.POST.get('email')
+        phone = request.POST.get('phone')
         password = request.POST.get('password')
         re_password = request.POST.get('re_password')
 
         data = {
-            'is_superuser':0,
-            'is_admin':1,
-            'name':name,
-            'username':username,
-            'phone': 'NULL',
-            'password':password,
-            're_password':re_password,
-            'email':email,
+            "counter": 0,
+                "isVerified": 1,
+                "is_superuser": 1,
+                "is_admin": 1,
+                "first_name": name,
+                "last_name": "admin",
+                "username": username,
+                "password": password,
+                "dob": "1998-06-02",
+                "gender": 0,
+                "aadhar_no": 0,
+                "address": "pune",
+                "smartphone": 1,
+                "phone": phone,
+                "re_password": re_password
         }
         
-        create_user_api = 'http://52.201.220.252/authapp/users/'
+        create_user_api = 'http://52.201.220.252/users/'
         requests.post(create_user_api, json=data)
         return redirect('sign_in')
     return render(request , 'Sign/sign_up.html')
@@ -73,13 +84,27 @@ def sign_up(request):
 def forget_pass(request):
     return render( request , 'Sign/forget_pass.html')
 
+# def home(request):
+#     if request.method=='POST':
+#         url = 'http://52.201.220.252/token/logout/'
+#         result = requests.post(url, headers={'Authorization': AUTH_TOKEN})
+#         print(result.json())
+#         return redirect('sign_in')
+#     return render(request, 'Sign/home.html')
+
 def home(request):
+    url = 'http://52.201.220.252/api/worker_count/'
+    result = requests.get(url, headers={'Authorization': AUTH_TOKEN})
+    data = result.json()
+    print(data)
+    print('This is required',data)
     if request.method=='POST':
-        url = 'http://52.201.220.252/authapp/token/logout/'
+        url = 'http://52.201.220.252/token/logout/'
         result = requests.post(url, headers={'Authorization': AUTH_TOKEN})
         print(result.json())
         return redirect('sign_in')
-    return render(request, 'Sign/home.html')
+    return render(request, 'Sign/home.html',data)
+
 
 def register(request):
     return render(request, 'Sign/register.html')

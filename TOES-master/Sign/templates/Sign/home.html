@@ -183,54 +183,48 @@ tr:nth-child(even) {
 
 
 
-{% block content %}
-<div class="container">
- <div class="row" style="  margin-top: 100px;">
-
-
-        <div class="card" style="width: 20rem;margin: auto;">
-            <div class="card-body" >
-              <h5 class="card-title">Total Workers</h5>
-              <h2 class="card-subtitle mb-2 text-muted">1 Million</h2>
-           </div>
-        </div>
-
-           <div class="card" style="width: 20rem;margin: auto;">
-            <div class="card-body" >
-              <h5 class="card-title">Total Recruiters</h5>
-              <h2 class="card-subtitle mb-2 text-muted">1 Million</h2>
-            </div>
+  {% block content %}
+  <div class="container">
+   <div class="row" style="  margin-top: 100px;">
+  
+  
+          <div class="card" style="width: 20rem;margin: auto;">
+              <div class="card-body" >
+                <h5 class="card-title">Total Workers</h5>
+                <h2 class="card-subtitle mb-2 text-muted">{{ worker_count }}</h2>
+             </div>
           </div>
-
-
-      </div>
-
-      <div class="row" style="  margin-top: 50px;">
-
-        <div class="card" style="width: 20rem;margin: auto;">
-            <div class="card-body" >
-              <h5 class="card-title">Total Requests</h5>
-              <h2 class="card-subtitle mb-2 text-muted">1 Million</h2>
-           </div>
-        </div>
-
-           <div class="card" style="width: 20rem;margin: auto;">
-            <div class="card-body" >
-              <h5 class="card-title">Accepted Requests</h5>
-              <h2 class="card-subtitle mb-2 text-muted">1 Million</h2>
+  
+             <div class="card" style="width: 20rem;margin: auto;">
+              <div class="card-body" >
+                <h5 class="card-title">Total Recruiters</h5>
+                <h2 class="card-subtitle mb-2 text-muted">{{ recruiter_count }}</h2>
+              </div>
             </div>
+  
+  
+        </div>
+  
+        <div class="row" style="  margin-top: 50px;">
+  
+          <div class="card" style="width: 20rem;margin: auto;">
+              <div class="card-body" >
+                <h5 class="card-title">Total Jobs</h5>
+                <h2 class="card-subtitle mb-2 text-muted">{{ job_count }}</h2>
+             </div>
           </div>
-
-
-      </div>
-
-   <div class="row" style=" margin-top: 50px;">
-
-      <div id="piechart" style="margin: auto;"></div>
-      <div id="piechart2" style="margin: auto;"></div>
-      </div>
-
-{% endblock %}
+  
+             <div class="card" style="width: 20rem;margin: auto;">
+              <div class="card-body" >
+                <h5 class="card-title">Accepted Jobs</h5>
+                <h2 class="card-subtitle mb-2 text-muted">{{ accepted_count }}</h2>
+              </div>
+            </div>
+  
+  
+           
+  
+  {% endblock %}
 
 </div>
 
