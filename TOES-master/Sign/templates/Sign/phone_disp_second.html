@@ -1,0 +1,67 @@
+{% extends 'Sign/home.html' %}
+{ % load static % }
+{% block content %}
+
+     
+<div class="container" style="    padding: 34px 0px 19px 0px;">
+    <h2>Worker Details Form</h2>
+    <hr>
+  </div>
+
+
+          <form>
+             <div class="row" style="
+             margin-left: 23px;
+             margin-right: 23px;
+             margin-bottom: 25px;
+         ">
+                 <div class="col">
+                     
+                     <input type="text" class="form-control" placeholder=" Category 1"  >
+                    </div>
+                    <div class="col">      
+                        <input type="text" class="form-control" placeholder=" visiting Charges "  >
+                     </div>
+                    <div class="col">   
+                    <input type="text" class="form-control" placeholder=" Experience "  >
+                    </div>
+                 </div>
+                 <div class="row" style="
+             margin-left: 23px;
+             margin-right: 23px;
+             margin-bottom: 25px;
+         ">
+                 <div class="col">
+                     
+                    <input type="text" class="form-control" placeholder=" Category 2"  >
+                    </div>
+                    <div class="col">      
+                        <input type="text" class="form-control" placeholder=" visiting Charges "  >
+                     </div>
+                    <div class="col">   
+                    <input type="text" class="form-control" placeholder=" Experience "  >
+                    </div>
+                 </div>
+
+                 <div class="row" style="
+                 margin-left: 23px;
+                 margin-right: 23px;
+                 margin-bottom: 25px;
+             ">
+                     <div class="col">
+                         
+                        <input type="text" class="form-control" placeholder=" Category 3"  >
+                    </div>
+                    <div class="col">      
+                        <input type="text" class="form-control" placeholder=" visiting Charges "  >
+                     </div>
+                    <div class="col">   
+                    <input type="text" class="form-control" placeholder=" Experience "  >
+                    </div>
+                     </div>
+
+                                 <a style= "float: right;margin-right: 35px;" id = "btn1" class="btn btn-info" role="button" href= " {% url 'phone_disp_second' %} " > Next </a>
+          </form>
+
+
+{% endblock %}

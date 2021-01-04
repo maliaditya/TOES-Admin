@@ -4,8 +4,9 @@
 
 
 
+
 <div class="container" style="    padding: 34px 0px 19px 0px;">
-  <h2> Workers Table</h2> 
+  <h2> Carpenters Table</h2> 
   <button class="dropdown-toggle btn btn-secondary" style="float: right;margin-top: -45px;" data-toggle="dropdown" href="#">SELECT ROLE<span class="caret"></span></button>
   <ul class="dropdown-menu">
     <li style="margin-left : 40px" class="Active"><a href="{% url 'workers' %}">ALL</a></li>
@@ -14,6 +15,8 @@
     <li style="margin-left : 40px"><a  href="{% url 'driver' %}">Drivers</a></li>
     <li style="margin-left : 40px"><a  href="{% url 'electrician' %}">Electricians</a></li>
     <li style="margin-left : 40px"><a  href="{% url 'carpenter' %}">Carpenter</a></li>
+
+
 
 </ul>
 
@@ -36,28 +39,21 @@
 
         ">
 
+
       <div class="row" >
             <!--Table-->
               <table class="table table-hover table-fixed" style="
               margin-right: 27px;
-          " >
+          ">
 
                     <!--Table head-->
-                    <thead >
+                    <thead>
                       <tr>
-
-                        <th>Name</th>
+                        <th>Worker Name</th>
                         <th>Contact Number</th>
-                        <th>City</th>
-                        <th>category_1</th>
-                        <th>vc</th>
-                        <th>exp</th>
-                        <th>category_2</th>
-                        <th>vc</th>
-                        <th>exp</th>
-                        <th>category_3</th>
-                        <th>vc</th>
-                        <th>exp</th>
+                        <th>Category</th>
+                        <th>Visiting Charges</th>
+                        <th>Experience</th>
                       </tr>
                     </thead>
                     <!--Table head-->
@@ -66,18 +62,11 @@
                     <tbody>
                     {% for i in response %}
                       <tr>
-                        <th scope="row">{{i.fname}}</th>
-                        <td>{{i.phone}}</td>
-                        <td>{{i.city}}</td>
-                        <td>{{i.category_1}}</td>
-                        <td>{{i.category_1_vc}}</td>
-                        <td>{{i.category_1_ex}}</td>
-                        <td>{{i.category_2}}</td>
-                        <td>{{i.category_2_vc}}</td>
-                        <th>{{i.category_2_ex}}</th>
-                        <th>{{i.category_3}}</th>
-                        <th>{{i.category_3_vc}}</th>
-                        <th>{{i.category_3_ex}}</th>
+                        <th scope="row">{{i.worker_name}}</th>
+                        <td>{{i.contact_no}}</td>
+                        <td>{{i.category}}</td>
+                        <td>{{i.visiting_charges}}</td>
+                        <td>{{i.experience}}</td>
                       </tr>
                       {% endfor %}
                     </tbody>

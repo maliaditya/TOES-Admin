@@ -1,103 +1,101 @@
-{% load static%}
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>PILLARS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<style>
+{% extends 'Sign/home.html' %}
+{ % load static % }
+{% block content %}
 
 
-hr {
-    margin-top: 1rem;
-    margin-bottom: 4rem;
-    border: 0;
-    border-top: 1px solid rgba(0,0,0,.1);
-}
 
-</style>
-<body style="background: url({% static 'media/bg.png'%}) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;">
-
-<br>
-<br>
-
-
-<div class="card" style="
-                        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-                        transition: 0.3s;
-                        margin-top: 5%;
-                        border-radius: 35px;
-                        width:60%;
-                        margin-left: 20%;
-                        ">
-
-  <br>
-
-<main role="main" class="container" style="margin-left: auto;margin-right: auto;width:auto;margin-top: -24px;">
-
-  
-<div class="card-columns">
-    
-    <div class="card" style="width: 24rem;border-color: white;border-radius: 36px;margin-bottom: 0px;">
-  <div class="card-body">
-      <center><p class="card-title" style="padding-top: 15px;color: #3d0546;font-size: 26px;">Create New Admin</p>
-        <hr width="300px;" color="#3d0546"
-        size="200"> </center>
-
-
-    <form method="post">
-    {% csrf_token %}
-    <input style="width: 100%;margin-top: -17px;" type="Name" class="form-control" id="pwd" placeholder="Name" name="name">
-    <br> <br> <input style="width: 100%;margin-top: -17px;" type="Username" class="form-control" id="pwd" placeholder="Username" name="username">
-    <br> <br> <input style="width: 100%;margin-top: -17px;" type="phone" class="form-control" id="pwd" placeholder="Phone" name="phone">
-    <br><br>  <input style="width: 100%;margin-top: -17px;" type="password" class="form-control" id="pwd" placeholder="Password" name="password">
-    <br> <br> <input style="width: 100%;margin-top: -17px;" type="password" class="form-control" id="pwd" placeholder="Confirm Password" name="re_password">
-
-<br>
-    <center><button type="submit" style="width: 23%;color: white;background-color: #2B1EC0;border-radius: 35px;">Create</button>
-
-</form>
-
-      
+<div class="container" style="    padding: 34px 0px 19px 0px;">
+    <h2> Create New Admin</h2>
+    <hr>
   </div>
-</div>
-    
-    <div class="card" style="width: 25rem;margin-left: 34px;margin-top: 0px;border-radius: 35px;margin-bottom: 0px;background-color: #2B1EC0;">
-        <center><p class="card-title" style="padding-top: 15px;color: white;font-size: 26px;">Admin Sign Up</p>
-         </center>
+  {% for message in messages %}
 
-  <div class="card-body" style="padding-top:83px">
-      <center><p class="card-title" style="padding-top: 90px;color: #ffffff73;;font-size: 15px;">It Will Take Couple Of Minutes<br>To Create Your Accont</p>
-         </center>
-    <center><button type="submit" style="width: 23%;color: white;background-color: #2B1EC0;border-radius: 35px;">Log In</button>
-    
-    <br>
-<div class="container" style="
-    padding-top: 140px;
-">
-    <p style="color:black;margin-bottom: 0px;">from</p>
-    <p style="color:white;margin-bottom: -1px;">PILLARS</p></div>
+  <div class="alert alert-success">
+      <a class="close" href="#" data-dismiss="alert">×</a>
+
+      {{ message }}
+
   </div>
-  </center>
-</div>
-    
-</div>
-</div>
+{% endfor %}
 
-</div>
+  <form method="post">{% csrf_token %}
+            <div class="row" style="margin-left: 23px;margin-right: 23px;margin-bottom: 25px;">
+                <div class="col">            
+                    <input type="text" class="form-control" placeholder=" First Name" name="fname" >
+                </div>
+            <div class="col">              
+               <input type="text" class="form-control" placeholder=" Last Name " name="lname"  >
+            </div>
+             </div>
+        <div class="row" style="
+        margin-left: 23px;
+        margin-right: 23px;
+        margin-bottom: 25px;
+    ">
+            <div class="col">
+               
+                <input type="text" class="form-control" placeholder="Username" name="username"  >
+              </div>
+             <div class = "col" >
+                   
+                   <input type="date" class="form-control" placeholder="DOB" name="dob" >
+             </div>
+            </div>
+            <div class="row" style="
+            margin-left: 23px;
+            margin-right: 23px;
+            margin-bottom: 25px;
+        ">
+                <div class="col">
+                   
+                   <div class="row">
+                       <lable style="margin-left: 10px;" >Gender: </lable>
+                   <input type="radio"  style="margin-top: 6px;margin-left: 18px;" id="male" name="gender" value="male">
+                   <label for="male" style="margin-left: 10px;">Male</label><br>
+                   <input type="radio" style="margin-top: 6px;margin-left: 18px;" id="female" name="gender" value="female">
+                   <label for="female" style="margin-left: 10px;">Female</label><br>
+                   <input type="radio" style="margin-top: 6px;margin-left: 18px;" id="other" name="gender" value="other">
+                   <label for="other" style="margin-left: 10px;">Other</label>
+                 </div>
+               </div>
+                 <div class = "col" >
+                      
+                       <input type="text" class="form-control" placeholder="Aadhar No" name="adhar_no" >
+                 </div>
+                </div>
+
+                    <div class="row" style="
+                    margin-left: 23px;
+                    margin-right: 23px;
+                    margin-bottom: 25px;
+                ">
+                        <div class="col">
+                        
+                            <input type="text" class="form-control" placeholder="Address" name="address" >
+                         </div>
+                         <div class="col">
+                         
+                               <input type="text" class="form-control" placeholder="Phone No " name="phone" >
+                         </div>
+                        </div>
 
 
+                    <div class="row" style="
+                    margin-left: 23px;
+                    margin-right: 23px;
+                    margin-bottom: 25px;
+                ">
+                        <div class="col">
+                        
+                            <input type="password" class="form-control" placeholder="Password"  name="password">
+                         </div>
+                         <div class="col">
+                         
+                               <input type="password" class="form-control" placeholder="Confirm Password" name="re_password" >
+                         </div>
+                        </div>
 
-</body>
-</html>
+                        <button type="submit" style= "float: right;margin-right: 35px;" id = "btn1" class="btn btn-primary" role="button" href= "#" > Create </button>
+ </form>
+
+{% endblock %}

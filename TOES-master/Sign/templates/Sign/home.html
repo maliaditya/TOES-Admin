@@ -1,19 +1,33 @@
 {% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
+<!DOCTYPE html>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
+<html>
+<head>
+    <title>PILLARS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title> TOES Admin Web Page</title>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Adding Dropdowns in Bootstrap 4 via Data Attributes</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
 
-    <style>
+
+
 
 
 
@@ -24,277 +38,279 @@ body {
 
 .sidenav {
   height: 100%;
-  width: 160px;
+  width: 0;
   position: fixed;
   z-index: 1;
-  top: 58px;
+  top: 0;
   left: 0;
-  background-color: #2B1EC0;
+  background-color: #111;
   overflow-x: hidden;
-  padding-top: 20px;
+  transition: 0.5s;
+  padding-top: 60px;
 }
 
-
 .sidenav a {
-  padding: 6px 8px 6px 16px;
+  padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 18px;
-  color: #d8d2d2;
+  font-size: 25px;
+  color: #818181;
   display: block;
+  transition: 0.3s;
 }
 
 .sidenav a:hover {
-  color: green;
-}
-
-.dropdown-menu {
-  background-color: #dadada;
-
-}
-
-.dropdown-menu a{
- color: #818181;
-}
-.dropdown-menu a:hover {
   color: #f1f1f1;
 }
 
-
-.main {
-  margin-left: 200px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: -1px 10px;
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
-.pillnav {
-  margin-left: 0px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: -1px 10px;
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
 }
 
-
-
-.bg-light {
-    background-color: #2B1EC0!important;
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
-#bottom { 
-                position:absolute;                  
-                bottom:80px;                          
-                left:0;                          
-            } 
-
-
-
-img {
-  border-radius: 40%;
-}
-
-
-
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
+.collapsible {
+  background-color: #111;
+  color: #e4dcdc9c;
+  cursor: pointer;
+  padding: 18px;
   width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
+  border: none;
   text-align: left;
-  padding: 8px;
+  outline: none;
+  font-size: 15px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+    background-color: #111;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #111;
 }
 
 
-
-
-  .input-icons i { 
-            position: absolute; 
-        } 
-          
-        .input-icons { 
-            width: 100%; 
-            margin-bottom: 10px; 
-        } 
-          
-      .icon {
-    padding: 16px;
-    color: #7a0099;
-    min-width: 47px;
-}
-          
-        .input-field { 
-            width: 100%; 
-            padding: 10px; 
-            text-align: center; 
-        } 
-          
-        h2 { 
-            color: green; 
-        } 
-
-.dropdown-menu a {
-    color: #000000;
+.spectrum-backgrounda {
+    background:
+        linear-gradient(#45bfe4, transparent),
+        linear-gradient(to  right, #3895d3, transparent),
+        linear-gradient(to  left, #072f5f, transparent);
+    background-blend-mode: screen;
 }
 
 </style>
-  </head>
-  <body style="background-color:#e4dbe685">
+<body>
 
 
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+  <h3 style="
+    color: #9efafb;
+    padding-left: 50px;
+">PILLARS</h3>
+  <hr style="width: 135px; color: white">
 
-<div class="sidenav">
-  <a  href=" {% url 'Home' %} " style="margin-top: 30px;">Home</a>
-  <a href="{% url 'recruiters' %}">Recruiter</a>
-  <a href="{% url 'workers'%}">Worker</a>
-  <a href=" {% url 'register' %} " >Registeration</a>
-  <a href="{% url 'sign_up' %}">Create Admin </a>
+      
+<div class="Container" style= "margin-left: 20px">
+<a  href= "{% url 'Home' %}" style="font-size: large;">Home</a>
+<a href= "{% url 'recruiters' %}" style="font-size: large;">Recruiter</a>
+<a href= "{% url 'workers'%}" style="font-size: large;">Worker</a>
+<a href= " {% url 'create' %} " style="font-size: large;">Registeration</a>
+<a href= "{% url 'sign_up' %}" style="font-size: large;">Create Admin</a>
+  
 
-  <div id="bottom" style="color:#989898">
-        <div >Date : <div style="display:inline;" id="date"></div></div>
-        <div >Time : <div style="display:inline;" id="time"></div></div>
-
-    </div>
+  
 </div>
+</div>
+  
 
-<div class="pillnav">
+<div id="main">
+<nav class="navbar navbar-light spectrum-backgrounda"  style="
+    border-radius: 13px;
+" >
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Dashboard</span><br>
 
-    <nav class="navbar navbar-brand-center navbar-light bg-light fixed-top justify-content-between">
-     <a class="navbar-brand-center" ><img src="{% static 'media/logo.png' %} "alt="Avatar" style="width: 50px;margin-right: 10px;margin-left: 40px;"></a>
-        <div class="nav-item nav-link "style="color:white">PILLARS</div>
-      <div class="nav-item nav-link dropdown" >
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="{% static 'media/img_avatar.png' %}" alt="Avatar" style="width:50px"><span class="caret"></span></a>
 
-      <ul class="dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><form  method = 'post' > {% csrf_token %}<button type="submit">Sign out</button></form></li>
+   <div class="dropdown" style="
+    margin-right: 64px;
+">
 
-        </ul>
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Avatar" style="width:50px"><span class="caret"></span></a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+      <a class="dropdown-item" href="#">Settings</a>
+      <a class="dropdown-item" href="#"><form  method = 'post' > {% csrf_token %}<button type="submit">Sign out</button></form></a>
+    </div>
+  </div>
+   
+
+
+</nav>
+<br>
+<div class="card-cloumns" style="
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin-left: auto;
+    border-radius: 5px;
+    margin-right: auto;
+    padding-bottom: 7%;
+    width: 100%;
+    
+">
+{% block content %}
+  <div class="container" style="    padding: 34px 0px 19px 0px;">
+    <h2 >Analytics</h2>
+    <hr>
+  </div>
+  <br>
+<div class="row">
+      <div class="card  " style="
+          
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    margin-left: 3%;
+    border-radius: 5px;
+    margin-right: auto;
+    width: 20%;
+   
+
+
+      ">
+           <h3 style="font-size:2vw;" class="card-title">Total Workers</h3>
+         <h1 class="card-subtitle mb-2 " style="font-size: 88px;color: #4285F4;    font-weight: bold;" >{{ worker_count }}</h1>
+
       </div>
 
-      </nav>
+      <div class="card " style="
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    margin-left: 3%;
+    border-radius: 5px;
+    margin-right: auto;
+    width: 20%;
+  
+      ">
+           <h3 style="font-size:2vw;" class="card-title">Total Recruiters</h3>
+         <h1 class="card-subtitle mb-2 " style="font-size: 88px;color: #ffbb00;    font-weight: bold;" >{{ recruiter_count }}</h1>
 
-  </div>
+
+        
+      </div>
+
+
+          <div class="card " style="
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    margin-left: 3%;
+    border-radius: 5px;
+    margin-right: auto;
+    width: 20%;
+   
+      ">
+         <h3 style="font-size:2vw;" class="card-title">Total Jobs</h3>
+         <h1 class="card-subtitle mb-2 " style="font-size: 88px;color: #EA4335;    font-weight: bold;" >{{ job_count }}</h1>
+
+
+        
+      </div>
+
+
+          <div class="card " style="
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    margin-left: 3%;
+    border-radius: 5px;
+    margin-right: auto;
+    width: 20%;
+      ">
+           <h3 style="font-size:2vw;" class="card-title">Accepted Jobs</h3>
+         <h1 class="card-subtitle mb-2 " style="font-size: 88px;color: #7cbb00; font-weight: bold;">{{ accepted_count }}</h1>
 
 
 
 
-  {% block content %}
-  <div class="container">
-   <div class="row" style="  margin-top: 100px;">
-  
-  
-          <div class="card" style="width: 20rem;margin: auto;">
-              <div class="card-body" >
-                <h5 class="card-title">Total Workers</h5>
-                <h2 class="card-subtitle mb-2 text-muted">{{ worker_count }}</h2>
-             </div>
-          </div>
-  
-             <div class="card" style="width: 20rem;margin: auto;">
-              <div class="card-body" >
-                <h5 class="card-title">Total Recruiters</h5>
-                <h2 class="card-subtitle mb-2 text-muted">{{ recruiter_count }}</h2>
-              </div>
-            </div>
-  
-  
-        </div>
-  
-        <div class="row" style="  margin-top: 50px;">
-  
-          <div class="card" style="width: 20rem;margin: auto;">
-              <div class="card-body" >
-                <h5 class="card-title">Total Jobs</h5>
-                <h2 class="card-subtitle mb-2 text-muted">{{ job_count }}</h2>
-             </div>
-          </div>
-  
-             <div class="card" style="width: 20rem;margin: auto;">
-              <div class="card-body" >
-                <h5 class="card-title">Accepted Jobs</h5>
-                <h2 class="card-subtitle mb-2 text-muted">{{ accepted_count }}</h2>
-              </div>
-            </div>
-  
-  
-           
-  
-  {% endblock %}
+        
+      </div>
+
 
 </div>
+
+
+{% endblock %}
+</div>
+
+
 
 
 
 <script>
-var d = new Date();
-var date = d.toLocaleDateString();
-var time = d.toLocaleTimeString();
-document.getElementById("date").innerHTML = date;
-document.getElementById("time").innerHTML = time;
-</script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
 
-
-
-
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-<script type="text/javascript">
-// Load google charts
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-
-// Draw the chart and set the chart values
-function drawChart() {
-  var data = google.visualization.arrayToDataTable([
-  ['Task', 'Hours per Day'],
-  ['Monthly Request', 8],
-  ['Monthly Request Accepted', 2],
-
-]);
-
-
-  // Display the chart inside the <div> element with id="piechart"
-  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-  chart.draw(data);
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
 }
 </script>
 
+<script>
+$(document).ready(function() { 
+  $("#owl-demo").owlCarousel({ 
+      autoPlay: 3000, //Set AutoPlay to 3 seconds 
+      items : 4,
+      itemsDesktop : [1199,3],
+      itemsDesktopSmall : [979,3] 
+  }); 
+});
+</script>
 
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
 
-
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-<script type="text/javascript">
-// Load google charts
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-
-// Draw the chart and set the chart values
-function drawChart() {
-  var data = google.visualization.arrayToDataTable([
-  ['Task', 'Hours per Day'],
-  ['Total Recruiters', 6],
-  ['Total Workers', 4],
-
-]);
-
-
-  // Display the chart inside the <div> element with id="piechart"
-  var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
-  chart.draw(data);
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
 }
 </script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+
+</body>
 </html>

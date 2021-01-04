@@ -2,201 +2,72 @@
 { % load static % }
 {% block content %}
 
-   
 
-    <div class="container-fluid" >
-      <div class="row" style="  margin-top: 108px;" >
- <center> 
-        <form style="margin-left:226px;width:191%"> 
-            <div class="input-icons"> 
-                <i class="fa fa-search icon"> 
-              </i> 
-                <input class="input-field" 
-                       type="text" 
-                       placeholder="Search Recruiters"> 
-            </div> 
-            </form>
- </centre>
- <div>
-      <button style="align:float-right;margin-left:145px" class="dropdown-toggle" data-toggle="dropdown" href="#">SELECT ROLE<span class="caret"></span></button>
+<div class="container" style="    padding: 34px 0px 19px 0px;">
+  <h2> Total Jobs </h2>
+  <hr>
+</div>
+      <div class="card spectrum-backgroundc " style="
+                
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      padding-left: 2%;
+      margin-left: 3%;
+      border-radius: 5px;
+      margin-right: auto;
+      width: 94%;
 
-      <ul class="dropdown-menu">
-          <li class="Active"><a href="#">ALL</a></li>
-          <li><a href="#">Painters</a></li>
-          <li><a  href="#">Plumbers</a></li>
 
-        </ul>
-      </div>
-      </div>
-      
-      <div class="row" style="  margin-top:10px;" >
+
+        ">
+
             <!--Table-->
-              <table class="table table-hover table-fixed" style="margin-left: 226px;margin-right: 25px;">
+              <table class="table table-hover table-fixed" >
+                
 
                     <!--Table head-->
                     <thead>
                       <tr>
-                        <th>Sr.No</th>
-                        <th>Name</th>
-                        <th>Email Id</th>
-                        <th>Username</th>
-                        <th>Contact</th>
-                        <th>Address</th>
-                        <th>Adhar No</th>
-                        <th>Gender</th>
-                        <th>Work</th>
+                        <th>Id</th>
+                        <th>Job Title</th>
+                        <th>Job Description</th>
+                        <th>Status</th>
+                        <th>Recruiter id </th>
                       </tr>
                     </thead>
                     <!--Table head-->
 
                     <!--Table body-->
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Aadesh</td>
-                        <td>Addy123@gmail.com</td>
-                        <td>addy</td>
-                        <td>28198928</td>
-                        <td>dattawadi</td>
-                        <td>ftr5152</td>
-                        <td>Male</td>
-                        <td>Electrician</td>
-                        
-                      </tr>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Aadesh</td>
-                        <td>Addy123@gmail.com</td>
-                        <td>addy</td>
-                        <td>28198928</td>
-                        <td>dattawadi</td>
-                        <td>ftr5152</td>
-                        <td>Male</td>
-                        <td>Electrician</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Aadesh</td>
-                        <td>Addy123@gmail.com</td>
-                        <td>addy</td>
-                        <td>28198928</td>
-                        <td>dattawadi</td>
-                        <td>ftr5152</td>
-                        <td>Male</td>
-                        <td>Electrician</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Aadesh</td>
-                        <td>Addy123@gmail.com</td>
-                        <td>addy</td>
-                        <td>28198928</td>
-                        <td>dattawadi</td>
-                        <td>ftr5152</td>
-                        <td>Male</td>
-                        <td>Electrician</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">8</th>
-                        <td>Aadesh</td>
-                        <td>Addy123@gmail.com</td>
-                        <td>addy</td>
-                        <td>28198928</td>
-                        <td>dattawadi</td>
-                        <td>ftr5152</td>
-                        <td>Male</td>
-                        <td>Electrician</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">9</th>
-                        <td>Aadesh</td>
-                        <td>Addy123@gmail.com</td>
-                        <td>addy</td>
-                        <td>28198928</td>
-                        <td>dattawadi</td>
-                        <td>ftr5152</td>
-                        <td>Male</td>
-                        <td>Electrician</td>
-                      </tr>
+                        {% for i in response %}
+                        <tr>
 
-                      <tr>
-                        <th scope="row">9</th>
-                        <td>Aadesh</td>
-                        <td>Addy123@gmail.com</td>
-                        <td>addy</td>
-                        <td>28198928</td>
-                        <td>dattawadi</td>
-                        <td>ftr5152</td>
-                        <td>Male</td>
-                        <td>Electrician</td>
-                      </tr>
+                        <th scope="row">{{i.id}}</th>
+                        <td>{{i.job_title}}</td>
+                        <td>{{i.job_Description}}</td>
+                        <td>
+                          {% if i.status == 1 %}
+                                 Pending
+                            {% elif i.status == 2 %}
+                                  Accepted
+                            {% else %}
+                                  Rejected
+                            {% endif %}
+                            </td>
+                        <td>{{i.recruiter}}</td>
+                         </tr>
+                        {% endfor %}
 
-                      <tr>
-                        <th scope="row">9</th>
-                        <td>Aadesh</td>
-                        <td>Addy123@gmail.com</td>
-                        <td>addy</td>
-                        <td>28198928</td>
-                        <td>dattawadi</td>
-                        <td>ftr5152</td>
-                        <td>Male</td>
-                        <td>Electrician</td>
-                      </tr>
 
-                      <tr>
-                        <th scope="row">9</th>
-                        <td>Aadesh</td>
-                        <td>Addy123@gmail.com</td>
-                        <td>addy</td>
-                        <td>28198928</td>
-                        <td>dattawadi</td>
-                        <td>ftr5152</td>
-                        <td>Male</td>
-                        <td>Electrician</td>
-                      </tr>
-
-                      <tr>
-                        <th scope="row">9</th>
-                        <td>Aadesh</td>
-                        <td>Addy123@gmail.com</td>
-                        <td>addy</td>
-                        <td>28198928</td>
-                        <td>dattawadi</td>
-                        <td>ftr5152</td>
-                        <td>Male</td>
-                        <td>Electrician</td>
-                      </tr>
-
-                      <tr>
-                        <th scope="row">9</th>
-                        <td>Aadesh</td>
-                        <td>Addy123@gmail.com</td>
-                        <td>addy</td>
-                        <td>28198928</td>
-                        <td>dattawadi</td>
-                        <td>ftr5152</td>
-                        <td>Male</td>
-                        <td>Electrician</td>
-                      </tr>
-
-                      <tr>
-                        <th scope="row">9</th>
-                        <td>Aadesh</td>
-                        <td>Addy123@gmail.com</td>
-                        <td>addy</td>
-                        <td>28198928</td>
-                        <td>dattawadi</td>
-                        <td>ftr5152</td>
-                        <td>Male</td>
-                        <td>Electrician</td>
-                      </tr>
                     </tbody>
                     <!--Table body-->
 
                   </table>
                   <!--Table-->
-        </div>            
-    </div>
+        </div>
+
 
 
 
@@ -210,4 +81,3 @@ document.getElementById("time").innerHTML = time;
 
 
 {% endblock %}
-

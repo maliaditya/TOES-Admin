@@ -3,75 +3,52 @@
 {% block content %}
 
 
-<legend style=" margin-top : 150px; margin-left : 400px;"> Without Smartphone Workers</legend>
+<h1 style=" margin-top : 150px; margin-left : 700px;"> Without Smartphone Workers</h1>
 
 
 <div class="container" >
-  <table class="table table-bordered" style=" margin-top : 50px ;margin-left : 100px; width : 800px; ">
+  <table class="table table-bordered" style=" margin-top : 50px ;margin-left : 0px; width : 800px; ">
     <thead>
       <tr style=" background-color : #5c6bc0 ; ">
-            <th>Sr no.</th>
-            <th> Name</th>
-            <th>Contact Number</th>
-            <th>Gender</th>
-            <th>Address </th>
-            <th>Permanant Address</th>
-            <th>Aadhar Numbar</th>
-            <th>Work</th>
-            <th>Experience</th>
-            <th>Req Cancel Count</th>
-            <th>Blocked</th>
+
+        <th>Name</th>
+        <th>Contact Number</th>
+        <th>City</th>
+        <th>category_1</th>
+        <th>category_1_vc</th>
+        <th>category_1_exp</th>
+        <th>category_2</th>
+        <th>category_2_vc</th>
+        <th>category_2_exp</th>
+        <th>category_3</th>
+        <th>category _3_vc</th>
+        <th>category_3_exp</th>
 
 
       </tr>
     </thead>
-    <tbody>
-      <tr>
-            <td>1</td>
-            <td>Aadesh</td>
-            <td>8999789564</td>
-            <td>Male</td>
-            <td>Pimpari</td>
-            <td>Pune</td>
-            <td>1234569845111</td>
-            <td>Carpenter</td>
-            <td> 5 </td>
-            <td>3</td>
-            <td> No </td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Aditya</td>
-        <td>9078789564</td>
-        <td>Male</td>
-        <td>Pimpari</td>
-        <td>Pimpari</td>
-        <td>1234569845111</td>
-        <td>Plumber</td>
-        <td> 5 </td>
-        <td>20</td>
-        <td> Yes </td>
-
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Mali</td>
-        <td>9078789564</td>
-        <td>Male</td>
-        <td>Pimpari</td>
-        <td>Pimpari</td>
-        <td>1234569845111</td>
-        <td>Plumber</td>
-        <td> 5 </td>
-        <td>12</td>
-        <td> No </td>
-      </tr>
+    <tbody>  {% for i in response %}
+        <tr>
+          <th scope="row">{{i.fname}}</th>
+          <td>{{i.phone}}</td>
+          <td>{{i.city}}</td>
+          <td>{{i.category_1}}</td>
+          <td>{{i.category_1_vc}}</td>
+          <td>{{i.category_1_ex}}</td>
+          <td>{{i.category_2}}</td>
+          <td>{{i.category_2_vc}}</td>
+          <th>{{i.category_2_ex}}</th>
+          <th>{{i.category_3}}</th>
+          <th>{{i.category_3_vc}}</th>
+          <th>{{i.category_3_ex}}</th>
+        </tr>
+        {% endfor %}
 
     </tbody>
   </table>
 
 
-  <a style= " margin-top : 50px; margin-left : 100px;" id = "btn1" class="btn btn-info" role="button" href= " {% url 'create' %} " >  Back </a>
+  <a style= " margin-top : 50px; margin-left : 100px;" id = "btn1" class="btn btn-info" role="button" href= " {% url 'phone_disp_second' %} " >  Back </a>
 
 
 </div>
