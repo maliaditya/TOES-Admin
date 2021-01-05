@@ -155,7 +155,6 @@ body {
     <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Avatar" style="width:50px"><span class="caret"></span></a>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-      <a class="dropdown-item" href="#">Settings</a>
       <a class="dropdown-item" href="#"><form  method = 'post' > {% csrf_token %}<button type="submit">Sign out</button></form></a>
     </div>
   </div>
