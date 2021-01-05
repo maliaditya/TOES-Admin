@@ -17,7 +17,6 @@
 
         <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Adding Dropdowns in Bootstrap 4 via Data Attributes</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -119,24 +118,15 @@ body {
 
 
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  
-  <h3 style="
-    color: #9efafb;
-    padding-left: 50px;
-">PILLARS</h3>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> 
+  <h3 style="color: #9efafb;padding-left: 50px;">PILLARS</h3>
   <hr style="width: 135px; color: white">
-
-      
 <div class="Container" style= "margin-left: 20px">
 <a  href= "{% url 'Home' %}" style="font-size: large;">Home</a>
 <a href= "{% url 'recruiters' %}" style="font-size: large;">Recruiter</a>
 <a href= "{% url 'workers'%}" style="font-size: large;">Worker</a>
 <a href= " {% url 'create' %} " style="font-size: large;">Registeration</a>
 <a href= "{% url 'sign_up' %}" style="font-size: large;">Create Admin</a>
-  
-
-  
 </div>
 </div>
   
@@ -155,7 +145,9 @@ body {
     <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Avatar" style="width:50px"><span class="caret"></span></a>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-      <a class="dropdown-item" href="#"><form  method = 'post' > {% csrf_token %}<button type="submit">Sign out</button></form></a>
+      <a href="{% url 'sign_in' %}" class=" dropdown-item btn btn-primary">
+        <span class="glyphicon glyphicon-log-out"></span> Log out
+      </a>
     </div>
   </div>
    
