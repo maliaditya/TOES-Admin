@@ -329,5 +329,6 @@ def profile(request):
         dob = data['dob']
         gender=data['gender']
         username=data['username']
+        is_superuser=data['is_superuser']
 
-        return render(request , 'Sign/profile.html',{'name':name,'mobile':mobile,'address':address,'dob':dob,'gender':gender,'username':username})
+        return render(request , 'Sign/profile.html',{'name':name,'mobile':mobile,'address':address,'dob':dob,'gender':gender,'username':username,'is_superuser':is_superuser})
