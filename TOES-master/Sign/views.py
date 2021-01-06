@@ -44,7 +44,7 @@ def sign_in(request):
             if access['is_admin'] == True or access['is_superuser']==True:
                 return redirect('Home')
             else:
-                message="You Don’t Have Permission To Access on this Server"
+                messages.error(request,"Access denied..! Admin only")
                 return HttpResponse(message)
         else:
             try:
