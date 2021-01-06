@@ -13,11 +13,11 @@
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
                       <h4>{{username}}</h4>
-                      {{if is_superuser == 1}}
+                      {% if is_superuser == 1%}
                       <p class="text-secondary mb-1">Super Admin</p>
-                      {{else}}
+                      {% else %}
                       <p class="text-secondary mb-1">Admin</p>
-
+                      {% endif %}
                     </div>
                   </div>
                 </div>
