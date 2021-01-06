@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>PILLARS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -123,7 +124,8 @@ body {
   <hr style="width: 135px; color: white">
 <div class="Container" style= "margin-left: 20px">
 <a  href= "{% url 'Home' %}" style="font-size: large;">Home</a>
-<a href= "{% url 'recruiters' %}" style="font-size: large;">Recruiter</a>
+<a  href= "{% url 'allusers' %}" style="font-size: large;">Users</a>
+<a href= "{% url 'recruiters' %}" style="font-size: large;">All Jobs</a>
 <a href= "{% url 'workers'%}" style="font-size: large;">Worker</a>
 <a href= " {% url 'create' %} " style="font-size: large;">Registeration</a>
 <a href= "{% url 'sign_up' %}" style="font-size: large;">Create Admin</a>

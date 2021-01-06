@@ -4,7 +4,7 @@
 
 
 <div class="container" style="    padding: 34px 0px 19px 0px;">
-  <h2> Total Jobs </h2>
+  <h2> All Users </h2>
   <hr>
 </div>
       <div class="card spectrum-backgroundc " style="
@@ -26,12 +26,13 @@
                     <!--Table head-->
                     <thead>
                       <tr>
-                        <th>Id</th>
-                        <th>Job Title</th>
-                        <th>Job Description</th>
-                        <th>Status</th>
-                        <th>Recruiter id </th>
-                        
+                        <th>Fname</th>
+                        <th>Lname</th>
+                        <th>DOB</th>
+                        <th>Gender</th>
+                        <th>Aadhar No</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
                       </tr>
                     </thead>
                     <!--Table head-->
@@ -41,20 +42,22 @@
                         {% for i in response %}
                         <tr>
 
-                        <th scope="row">{{i.id}}</th>
-                        <td>{{i.job_title}}</td>
-                        <td>{{i.job_Description}}</td>
+                        <th >{{i.first_name}}</th>
+                        <td>{{i.last_name}}</td>
+                        <td>{{i.dob}}</td>
+                        <td>{{i.gender}}</td>
+                        <td>{{i.aadhar_no}}</td>
+                        <td>{{i.phone}}</td>
+   
                         <td>
-                          {% if i.status == 1 %}
-                                 Pending
-                            {% elif i.status == 2 %}
-                                  Accepted
-                            {% else %}
-                                  Rejected
-                            {% endif %}
-                            </td>
-                        <td>{{i.recruiter}}</td>
-                       
+
+                        {% if i.isblocked == 1 %}
+                        <a href="unblock/{{i.id}}" name="delete" ><button type="button" class="btn btn-secondary"><i class="fa fa-ban" aria-hidden="true"></i></button></a>
+                       {% else %}
+                       <a href="block/{{i.id}}" name="delete" ><button type="button" class="btn btn-primary"><i class="fa fa-ban" aria-hidden="true"></i></button></a>
+                       {% endif %}
+                       <a href="delete/{{i.id}}" name="delete" ><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                        </td>
                          </tr>
                         {% endfor %}
 

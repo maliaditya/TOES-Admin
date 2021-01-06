@@ -20,7 +20,11 @@ urlpatterns = [
     path('driver/',views.driver , name = 'driver'),
     path('electrician/' , views.electrician , name = 'electrician'),
     path('carpenter/' , views.carpenter , name = 'carpenter'),
-    path('phone_disp_second/' , views.phone_disp_second , name='phone_disp_second')
+    path('phone_disp_second/' , views.phone_disp_second , name='phone_disp_second'),
+    path('da/' , views.allusers , name='allusers'),
+    path('da/delete/<id>' , views.delete , name='delete'),
+    path('da/block/<id>' , views.block , name='delete'),
+    path('da/unblock/<id>' , views.unblock , name='delete'),
 
 
 ]

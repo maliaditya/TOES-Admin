@@ -118,6 +118,7 @@ def register(request):
     else:
         return render(request, 'Sign/register.html')
 
+
 def create(request):
     if AUTH_TOKEN == None:
         return redirect('sign_in')
@@ -249,6 +250,31 @@ def workerplumber(request):
         response=response.json()
         return render(request , 'Sign/workerplumber.html',{'response':response})
 
+def delete(request,id):
+    url = f'http://52.201.220.252/api/delete/{id}'
+    response = requests.get(url , headers={'Authorization': AUTH_TOKEN})
+    return redirect('allusers')
+
+
+def block(request,id):
+    url = f'http://52.201.220.252/api/block/1/{id}'
+    response = requests.get(url , headers={'Authorization': AUTH_TOKEN})
+    return redirect('allusers')
+
+def unblock(request,id):
+    url = f'http://52.201.220.252/api/block/0/{id}'
+    response = requests.get(url , headers={'Authorization': AUTH_TOKEN})
+    return redirect('allusers')
+
+
+def allusers(request):
+    if AUTH_TOKEN == None:
+        return redirect('sign_in')
+    else:
+        url = 'http://52.201.220.252/users/'
+        response = requests.get(url , headers={'Authorization': AUTH_TOKEN})
+        response=response.json()
+        return render(request , 'Sign/users.html',{'response':response})
 
 
 # def profile(request):
