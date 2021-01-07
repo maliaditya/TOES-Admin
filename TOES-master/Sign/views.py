@@ -73,7 +73,7 @@ def sign_up(request):
             data = {
                 "counter": 0,
                     "isVerified": 0,
-                    "is_superuser": 0,
+                    "is_superuser": 1,
                     "is_admin": 1,
                     "first_name": fname,
                     "last_name": lname,
