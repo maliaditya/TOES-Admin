@@ -6,8 +6,6 @@ from django.contrib import messages
 from requests.auth import HTTPBasicAuth
 import requests
 import json
-from .models import Token
-
 
 AUTH_TOKEN = None
 USER_ID = None
@@ -44,8 +42,6 @@ def sign_in(request):
 
             #condition so that only admin and superuser can login
             if access['is_admin'] == True or access['is_superuser']==True:
-                session = Token(token = AUTH_TOKEN , user_id = access['id'])
-                session.save()
                 return redirect('Home')
             else:
                 messages.error(request,"Access denied..! Admin only")
@@ -108,7 +104,6 @@ def forget_pass(request):
 
 def home(request):
     if AUTH_TOKEN == None:
-
         return redirect('sign_in')
     else:
         url = 'http://52.201.220.252/api/worker_count/'
@@ -163,7 +158,7 @@ def create(request):
                         "gender": gender,
                         "aadhar_no": aadhar,
                         "address":address,
-                        "smartphone": 1,
+                        "smartphone": 0,
                         "phone": phone,
                         "re_password": re_password
                 }
