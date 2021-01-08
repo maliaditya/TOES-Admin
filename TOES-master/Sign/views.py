@@ -24,7 +24,7 @@ def sign_in(request):
 
             try:
             # post login details to this api
-                url = 'http://52.201.220.252/token/login/'
+                url = 'http://65.1.2.12/token/login/'
                 result = requests.post(url, json=data)
             except requests.RequestException:
                 print('wrong login fields')
@@ -32,7 +32,7 @@ def sign_in(request):
             global AUTH_TOKEN 
             AUTH_TOKEN = 'Token {}'.format(result.json()['auth_token'])
             #This Api provides User Information name , is_admin, is_superuser, email, phone etc
-            user_info_api = 'http://52.201.220.252/users/me/'
+            user_info_api = 'http://65.1.2.12/users/me/'
 
             #requsting user info form api
             user_info = requests.get(user_info_api, headers={'Authorization': AUTH_TOKEN})
@@ -48,7 +48,7 @@ def sign_in(request):
                 return HttpResponse(message)
         else:
             try:
-                url = 'http://52.201.220.252/token/logout/'
+                url = 'http://65.1.2.12/token/logout/'
                 result = requests.post(url, headers={'Authorization': AUTH_TOKEN})
             except:
                 return redirect('sign_in')
@@ -87,7 +87,7 @@ def sign_up(request):
                     "phone": phone,
                     "re_password": re_password
             }
-            create_user_api = 'http://52.201.220.252/users/'
+            create_user_api = 'http://65.1.2.12/users/'
             response = requests.post(create_user_api, json=data)
             d = response.json()
             if response.status_code == 201:
@@ -106,7 +106,7 @@ def home(request):
     if AUTH_TOKEN == None:
         return redirect('sign_in')
     else:
-        url = 'http://52.201.220.252/api/worker_count/'
+        url = 'http://65.1.2.12/api/worker_count/'
         result = requests.get(url, headers={'Authorization': AUTH_TOKEN})
         data = result.json()
         return render(request, 'Sign/home.html',data)
@@ -162,7 +162,7 @@ def create(request):
                         "phone": phone,
                         "re_password": re_password
                 }
-                create_user_api = 'http://52.201.220.252/users/'
+                create_user_api = 'http://65.1.2.12/users/'
                 response = requests.post(create_user_api, json=data)
                 d = response.json()
                 if response.status_code == 201:
@@ -186,7 +186,7 @@ def create(request):
                 
                 }
 
-                url = 'http://52.201.220.252/worker/'
+                url = 'http://65.1.2.12/worker/'
                 response = requests.post(url, json=data ,headers={'Authorization': AUTH_TOKEN})
                 d = response.json()
                 if response.status_code == 201:
@@ -206,7 +206,7 @@ def phone_disp(request):
     if AUTH_TOKEN == None:
         return redirect('sign_in')
     else:
-        url = 'http://52.201.220.252/api/withoutsmartphone/'
+        url = 'http://65.1.2.12/api/withoutsmartphone/'
         response = requests.get(url , headers = {'Authorization' : AUTH_TOKEN})
         response = response.json()
 
@@ -216,7 +216,7 @@ def recruiters(request):
     if AUTH_TOKEN == None:
         return redirect('sign_in')
     else:
-        url = 'http://52.201.220.252/job/'
+        url = 'http://65.1.2.12/job/'
         response = requests.get(url , headers = {'Authorization' : AUTH_TOKEN})
         response = response.json()
         return render(request , 'Sign/recruiters.html', {'response' : response})
@@ -225,7 +225,7 @@ def workers(request):
     if AUTH_TOKEN == None:
         return redirect('sign_in')
     else:
-        url = 'http://52.201.220.252/api/allcategories/'
+        url = 'http://65.1.2.12/api/allcategories/'
         json_data={}
         response = requests.get(url , headers={'Authorization': AUTH_TOKEN})
         response=response.json()
@@ -235,7 +235,7 @@ def workerpainter(request):
     if AUTH_TOKEN == None:
         return redirect('sign_in')
     else:
-        url = 'http://52.201.220.252/api/category/painter/'
+        url = 'http://65.1.2.12/api/category/painter/'
         response = requests.get(url , headers={'Authorization': AUTH_TOKEN})
         response=response.json()
         return render(request , 'Sign/workerpainter.html',{'response':response})
@@ -245,24 +245,24 @@ def workerplumber(request):
     if AUTH_TOKEN == None:
         return redirect('sign_in')
     else:
-        url = 'http://52.201.220.252/api/category/plumber/'
+        url = 'http://65.1.2.12/api/category/plumber/'
         response = requests.get(url , headers={'Authorization': AUTH_TOKEN})
         response=response.json()
         return render(request , 'Sign/workerplumber.html',{'response':response})
 
 def delete(request,id):
-    url = f'http://52.201.220.252/api/delete/{id}'
+    url = f'http://65.1.2.12/api/delete/{id}'
     response = requests.get(url , headers={'Authorization': AUTH_TOKEN})
     return redirect('allusers')
 
 
 def block(request,id):
-    url = f'http://52.201.220.252/api/block/1/{id}'
+    url = f'http://65.1.2.12/api/block/1/{id}'
     response = requests.get(url , headers={'Authorization': AUTH_TOKEN})
     return redirect('allusers')
 
 def unblock(request,id):
-    url = f'http://52.201.220.252/api/block/0/{id}'
+    url = f'http://65.1.2.12/api/block/0/{id}'
     response = requests.get(url , headers={'Authorization': AUTH_TOKEN})
     return redirect('allusers')
 
@@ -271,7 +271,7 @@ def allusers(request):
     if AUTH_TOKEN == None:
         return redirect('sign_in')
     else:
-        url = 'http://52.201.220.252/users/'
+        url = 'http://65.1.2.12/users/'
         response = requests.get(url , headers={'Authorization': AUTH_TOKEN})
         response=response.json()
         return render(request , 'Sign/users.html',{'response':response})
@@ -279,7 +279,7 @@ def allusers(request):
 
 # def profile(request):
     
-#     url = 'http://52.201.220.252/users/me/'
+#     url = 'http://65.1.2.12/users/me/'
 #     response = requests.get(url , headers={'Authorization':AUTH_TOKEN})
 #     response=response.json()
 #     return render(request , 'Sign/profile.html',{'response':response})
@@ -288,7 +288,7 @@ def driver(request):
     if AUTH_TOKEN == None:
         return redirect('sign_in')
     else:
-        url = 'http://52.201.220.252/api/category/driver/'
+        url = 'http://65.1.2.12/api/category/driver/'
         response = requests.get(url , headers={'Authorization': AUTH_TOKEN})
         response=response.json()
         return render(request , 'Sign/driver.html',{'response':response})
@@ -299,7 +299,7 @@ def electrician(request):
     if AUTH_TOKEN == None:
         return redirect('sign_in')
     else:
-        url = 'http://52.201.220.252/api/category/electrician/'
+        url = 'http://65.1.2.12/api/category/electrician/'
         response = requests.get(url , headers={'Authorization': AUTH_TOKEN})
         response=response.json()
         return render(request , 'Sign/electrician.html',{'response':response})
@@ -310,7 +310,7 @@ def carpenter(request):
     if AUTH_TOKEN == None:
         return redirect('sign_in')
     else:
-        url = 'http://52.201.220.252/api/category/carpenter/'
+        url = 'http://65.1.2.12/api/category/carpenter/'
         response = requests.get(url , headers={'Authorization': AUTH_TOKEN})
         response=response.json()
         return render(request , 'Sign/carpenter.html',{'response':response})
@@ -320,7 +320,7 @@ def profile(request):
     if AUTH_TOKEN == None:
         return redirect('sign_in')
     else:
-        url = 'http://52.201.220.252/users/me/'
+        url = 'http://65.1.2.12/users/me/'
         response = requests.get(url , headers={'Authorization': AUTH_TOKEN})
         data = response.json()
         name = data["first_name"] + " " +data['last_name']
