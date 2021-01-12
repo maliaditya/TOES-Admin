@@ -9,15 +9,17 @@
     <hr>
 </div>
 {% for message in messages %}
-
-<div class="alert alert-danger">
+{% if message.tags == "success" %}
+<div class="alert alert-success">
     <a class="close" href="#" data-dismiss="alert">×</a>
+    {% else %}
+    <div class="alert alert-danger">
+        <a class="close" href="#" data-dismiss="alert">×</a>
+        {% endif %}
 
-    {{ message }}
-
-</div>
-{% endfor %}
-
+        {{ message }}
+        </div>
+        {% endfor %}
 <form method="post">{% csrf_token %}
           <div class="row" style="margin-left: 23px;margin-right: 23px;margin-bottom: 25px;">
               <div class="col">            

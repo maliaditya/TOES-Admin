@@ -158,7 +158,7 @@ def create(request):
                         "gender": gender,
                         "aadhar_no": aadhar,
                         "address":address,
-                        "smartphone": 0,
+                        "smartphone": 1,
                         "phone": phone,
                         "re_password": re_password
                 }

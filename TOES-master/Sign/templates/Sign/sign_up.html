@@ -8,15 +8,19 @@
     <h2> Create New Admin</h2>
     <hr>
   </div>
-  {% for message in messages %}
+  
+{% for message in messages %}
+{% if message.tags == "success" %}
+<div class="alert alert-success">
+    <a class="close" href="#" data-dismiss="alert">×</a>
+    {% else %}
+    <div class="alert alert-danger">
+        <a class="close" href="#" data-dismiss="alert">×</a>
+        {% endif %}
 
-  <div class="alert alert-danger">
-      <a class="close" href="#" data-dismiss="alert">×</a>
-
-      {{ message }}
-
-  </div>
-{% endfor %}
+        {{ message }}
+    </div>
+    {% endfor %}
 
   <form method="post">{% csrf_token %}
             <div class="row" style="margin-left: 23px;margin-right: 23px;margin-bottom: 25px;">
